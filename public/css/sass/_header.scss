@@ -1,0 +1,51 @@
+.mainLogo--title {
+	margin-top: 1em;
+	text-indent: 1111%;
+	overflow: hidden;
+	white-space: nowrap;
+	background: url("../img/logo_stucher.svg") no-repeat center center;
+	background-size: 80%;
+	height: 3em;
+}
+
+#menuToggle {
+	// .hidden
+	position: absolute;
+	left: -999999px;
+}
+
+.menuToggle {
+	display: none;
+}
+
+.mainNav__ul {
+	margin-top: 1.5em;
+	height: auto;
+	& li {
+		list-style-type: none;
+		&:first-child a {
+			border-top: 1px solid white;
+		}
+		& a {
+			display: block;
+			border-bottom: 1px solid white;
+			padding-top: 0.8em;
+			padding-bottom: 0.8em;
+			padding-left: 0.5em;
+			text-decoration: none;
+			color: white;
+			-webkit-transition: all .3s ease;
+			-moz-transition: all .3s ease;
+			-ms-transition: all .3s ease;
+			-o-transition: all .3s ease;
+			transition: all .3s ease;
+			&.active {
+				background-color: #fff;
+				color: $mainColor;
+				&:hover, &:focus {
+					background-color: $white;
+				}
+			}
+		}
+	}
+}

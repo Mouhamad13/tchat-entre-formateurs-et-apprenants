@@ -1,0 +1,882 @@
+#dd_moreButton {
+  // .hidden
+  position: absolute;
+  left: -999999px;
+}
+.dd_moreButton--button {
+  position: absolute;
+  z-index: 10;
+  right: 2em;
+  top: 1.8em;
+  border: none;
+  outline: none;
+  background-color: $white;
+  cursor: pointer;
+  -webkit-transition: all .3s ease;
+  -moz-transition: all .3s ease;
+  -ms-transition: all .3s ease;
+  -o-transition: all .3s ease;
+  transition: all .3s ease;
+  width: 1.5em;
+  height: 1.5em;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+  border-radius: 50%;
+  span {
+    position: absolute;
+    width: 60%;
+    height: 2px;
+    top: 50%;
+    left: 50%;
+    margin-top: -1px;
+    margin-left: -30%;
+    -webkit-transition: all .3s ease;
+    -moz-transition: all .3s ease;
+    -ms-transition: all .3s ease;
+    -o-transition: all .3s ease;
+    transition: all .3s ease;
+    & + span {
+      -webkit-transform: rotate(-90deg);
+      -moz-transform: rotate(-90deg);
+      -ms-transform: rotate(-90deg);
+      -o-transform: rotate(-90deg);
+      transform: rotate(-90deg);
+    }
+  }
+}
+
+.dd_moreButton--content {
+  visibility: hidden;
+  opacity: 0;
+  position: absolute;
+  z-index: 100;
+  right: 1em;
+  top: 3em;
+  background-color: $white;
+  background-color: rgba( $white, 0.9 );
+  border-radius: 10px;
+  padding-top: 1em;
+  padding-bottom: 1em;
+  -webkit-transition: all .3s ease;
+  -moz-transition: all .3s ease;
+  -ms-transition: all .3s ease;
+  -o-transition: all .3s ease;
+  transition: all .3s ease;
+  &:before {
+    position: absolute;
+    -webkit-transform: rotate(45deg);
+    -moz-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    -o-transform: rotate(45deg);
+    transform: rotate(45deg);
+    top: -0.60em;
+    right: 1.1em;
+    content: "";
+    display: block;
+    width: 1em;
+    height: 1em;
+    background-color: $white;
+  }
+  & li a {
+    text-decoration: none;
+    display: block;
+    padding: 0.5em;
+  }
+}
+
+#dd_moreButton:checked {
+  & ~ .dd_moreButton--content {
+    visibility: visible;
+    top: 4em;
+    opacity: 1;
+  }
+  & ~ .dd_moreButton--button span+span {
+    -webkit-transform: none;
+    -moz-transform: none;
+    -ms-transform: none;
+    -o-transform: none;
+    transform: none;
+  }
+}
+
+
+
+///////////////// BOXES
+.box--group {
+  padding: 1em;
+}
+.box {
+  background-color: $white;
+  margin-bottom: 1em;
+  position: relative;
+}
+.box--shadow {
+  @include shadow(0, 0, 8px, rgba($black, 0.3));
+}
+
+.box__head {
+  padding: 1em;
+  .box__smallTitle--left {
+    float: left;
+  }
+  .box__bigTitle--center {
+    text-align: center;
+    font-size: 1.5em;
+  }
+  &.box__blockTitle, .box__blockTitle {
+    padding: 0.5em 1em;
+    margin-top: -1em;
+    margin-left: -1em;
+    margin-right: -1em;
+    margin-bottom: -1em;
+    &.teacher {
+      padding-right: 5em;
+    }
+    &--dark {
+      background-color: $grayDark;
+      color: $white;
+    }
+  }
+  .box__button-icon-text--right {
+    float: right;
+  }
+}
+
+.button-icon-text {
+  color: $black;
+  border: 1px solid transparent;
+  text-decoration: none;
+  font-size: 0.8em;
+  @include transition(all);
+  padding: 0.2em 0.3em;
+  &:hover, &:focus, &:active {
+    border: 1px solid $grayLight;
+    @include border-radius(5px);
+  }
+  &:active {
+    background-color: $grayLight;
+  }
+}
+
+.box__group--list--list {
+  position: relative;
+  list-style: none;
+  padding-left: 1em;
+  padding-right: 1em;
+  padding-top: 1em;
+  padding-bottom: 1em;
+  border-bottom: 1px solid $grayLight;
+  .box__seanceDate {
+    float: left;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    width: 120px;
+    height: 120px;
+    background-color: $grayLight;
+    padding: 0.8em;
+    color: $black;
+    text-decoration: none;
+    position: relative;
+    span {
+      display: block;
+      text-align: center;
+      &.box__seanceDate--dayNumber {
+        font-size: 1.2em;
+      }
+      &.box__highlight {
+        background-color: $grayDark;
+        color: $white;
+        position: absolute;
+        padding: 0.2em;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        @include transition(all);
+      }
+    }
+  }
+  .box__seanceCourse--info {
+    margin-left: 120px;
+    padding-left: 1em;
+    padding-top: 0.5em;
+    .box__seanceCourse--numbers {
+      display: block;
+      margin-bottom: 1em;
+      color: $black;
+      text-decoration: none;
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+}
+
+.box__bottomLink {
+  display: block;
+  padding: 0.5em;
+  color: $white;
+  text-decoration: none;
+  text-align: center;
+  &.box__bottomLink--dark {
+    background-color: $grayDark;
+    @include transition(all);
+  }
+}
+
+.box__group--studentAsk {
+  .icon {
+    font-size: 1.5em;
+    margin-left: 0.5em;
+  }
+}
+
+.list__users--middle {
+  display: inline-block;
+  padding-top: 1em;
+}
+
+.box__list__rightButtons {
+  float: right;
+  
+  .box__list__rightButton {
+    display: inline-block;
+    padding: 1.3em;
+    @include transition( all );
+    color: $white;
+  }
+
+}
+
+.box__profilImage {
+  @include border-radius(50%);
+}
+
+.box__profilImage--small {
+  width: 2em;
+  height: 2em;
+}
+
+.profilPicName {
+  img {
+    vertical-align:middle;
+  }
+  color: $black;
+  text-decoration: none;
+  &:hover {
+    span {
+      text-decoration: underline;
+    }
+  }
+}
+
+.comment_profilPicName {
+  width: 20%;
+  float: left;
+  text-align: center;
+  img {
+    margin-bottom: 0.5em;
+  }
+  span {
+    font-size: 0.6em;
+    display: block;
+  }
+}
+
+.box__group--content {
+  padding: 1em;
+}
+
+.box__group--comment--item {
+  padding-top: 1em;
+  padding-bottom: 1em;
+  border-bottom: 1px solid $grayLight;
+  position: relative;
+  &:last-child {
+    border-bottom: 0;
+  }
+}
+
+.comment__icon--delete {
+  position: absolute;
+  top: 1.4em;
+  right:0.5em;
+}
+
+.box--comment {
+  padding: 1em;
+  .box--comment--content {
+    position: relative;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    background-color: $grayLight;
+    padding: 0.3em 0.5em;
+    padding-bottom: 1em;
+    float: right;
+    width: 75%;
+    @include border-radius(1em);
+    &--teacher {
+      padding-right: 2em;
+    }
+  }
+  .time {
+    color: $grayMiddleLight;
+    font-size: 0.6em;
+    position: absolute;
+    left: 0.6rem;
+    bottom: 0.3rem;
+
+  }
+}
+
+.bannerUnderTitle {
+  padding-top: 1em;
+  padding-bottom: 0.5em;
+  border-top: 1px solid $grayLight;
+  text-align: center;
+}
+
+.shutterTitle {
+  padding: 1em;
+  color: $white;
+  text-align: center;
+  position: relative;
+  cursor: pointer;
+  &.reduce {
+    margin-bottom: 0.5em;
+  }
+  &.reduce .icon {
+    -webkit-transform: rotate(-90deg);
+    -moz-transform: rotate(-90deg);
+    -ms-transform: rotate(-90deg);
+    -o-transform: rotate(-90deg);
+    transform: rotate(-90deg);
+  }
+  &.reduce + .box--group {
+    height: 0;
+    padding: 0;
+    overflow: hidden;
+  }
+  .icon {
+    position: absolute;
+    left: 0.5em;
+    top: 0.9em;
+    cursor: pointer;
+    font-size: 1.2em;
+    @include transition(all);
+  }
+}
+
+.boxTitle__teahcerIcon--group {
+  position: absolute;
+  right: 0.5em;
+  top: 0.5em;
+  .boxTitle__teacherIcon {
+    color: $grayMiddleLight;
+    &:hover, &:focus {
+      color: $white;
+    }
+  }
+}
+
+.comment__box {
+  padding-top: 1em;
+  .comment__box--textarea {
+    width: 85%;
+    float: left;
+    resize: none;
+    height: 3.5em;
+  }
+  .comment__box--button {
+    border: none;
+    width: 15%;
+    height: 4.5em;
+    float: right;
+    background-color: transparent;
+    @include shadow(0, 0, 0, 0);
+    @include border-radius(0);
+    font-size: 1rem;
+    span {
+      @include transition(all);
+      font-size: 3em;
+    }
+  }
+}
+
+.box__empty {
+  clear: both;
+  list-style: none;
+  padding: 1em;
+  padding-top: 0;
+  color: $grayMiddleLight;
+}
+
+.blockTitle--edit {
+  position: absolute;
+  right: 5em;
+  top: 2em;
+}
+
+
+
+.selectColor {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  padding: 1em;
+  li {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    margin-bottom: 1em;
+    display: block;
+    width: 50%;
+    &.even {
+      float: left;
+      padding-right: 0.5em;
+    }
+    &.odd {
+      float: right;
+      padding-left: 0.5em;
+    }
+    &.color-1 a {
+      background-color: $color-1;
+    }
+    &.color-2 a {
+      background-color: $color-2;
+    }
+    &.color-3 a {
+      background-color: $color-3;
+    }
+    &.color-4 a {
+      background-color: $color-4;
+    }
+    &.color-5 a {
+      background-color: $color-5;
+    }
+    &.color-6 a {
+      background-color: $color-6;
+    }
+    &.color-7 a {
+      background-color: $color-7;
+    }
+    &.color-8 a {
+      background-color: $color-8;
+    }
+  }
+  a {
+    display: block;
+    height: 3em;
+  }
+  &--popup {
+    display: none;
+  }
+}
+
+.blockTitle__backButton {
+  position: absolute;
+  left: 1em;
+  top: 1.2em;
+  font-size: 1.5em;
+}
+
+
+// FILES
+.box__group--files {
+  padding: 1em;
+}
+.box__list--files {
+  position: relative;
+  padding: 0.5em;
+  border-bottom: 1px solid $white;
+  background-color: $grayLight;
+  @include transition(all);
+  &:hover, &:focus, &:active {
+    background-color: darken( $grayLight, 5% );
+  }
+  a {
+    display: block;
+    white-space: nowrap;
+    overflow: auto;
+  }
+  .deleteFile {
+    position: absolute;
+    top: -0.5em; right: -0.5em;
+  }
+  .icon {
+    position: relative;
+    top: -0.5em;
+    left: 0.3em;
+  }
+  div {
+    display: inline-block;
+    span {
+      display: block;
+      + span {
+        font-style: italic;
+        font-size: 0.8em;
+        margin-top: 0.3em;
+      }
+    }
+  }
+}
+
+
+////////// SEARCH FORM
+.searchForm {
+  .form-group--radioSearch {
+    @include noSpaceFont();
+    @include border-radius( 5px );
+    background-color: $grayLight;
+    overflow: hidden;
+    padding: 0.2em;
+  }
+  input:checked + label {
+    background-color: $grayDark;
+    color: $white;
+    &:hover, &:focus, &:active {
+      text-decoration: none;
+    }
+  }
+  label {
+    font-family: $mainFont;
+    width: 50%;
+    text-align: center;
+    display: inline-block;
+    padding: 0.2em;
+    cursor: pointer;
+    @include border-radius( 5px );
+    @include transition( all );
+    &:hover, &:focus, &:active {
+      text-decoration: underline;
+    }
+  }
+}
+
+.box__group--list--results--title {
+  display: inline-block;
+}
+
+.box__group--list--results {
+  padding: 0;
+  .box__group--list--results--title  {
+    display: table-cell;
+    background-color: $grayLight;
+    padding: 0.5em;
+    white-space: nowrap;
+    vertical-align: middle;
+    span {
+      color: $grayDark;
+    }
+  }
+  .box__group--list--content {
+    padding: 0.5em;
+    display: table-cell;
+    vertical-align: middle;
+  }
+}
+
+.shutterTitle--addButton {
+  font-size: 0.7em;
+  border: 1px solid $white;
+  padding: 0.3em;
+  position: absolute;
+  right: 1em;
+  &:hover, &:active, &:focus {
+    background-color: rgba( $white, 0.1 );
+  }
+  span {
+    margin-right: 0.3em;
+  }
+  @include border-radius( 10px );
+}
+
+
+.ChangePasswordLink {
+  // Color -> theme color
+  span + span {
+    text-decoration: underline;
+  }
+  display: block;
+  margin-top: 2em;
+  &:hover, &:focus, &:active {
+    .icon:before {
+      content: "\e08f";
+    }
+  }
+  .icon {
+    padding: 0.4em;
+    @include border-radius(50%);
+    @include transition(all);
+    color: $white;
+  }
+}
+
+
+.waitCourse--link {
+  a {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    width: 100%;
+    background-color: $grayMiddleLight;
+    padding: 1em;
+    display: block;
+    color: $grayLight;
+    text-align: center;
+    @include transition( all );
+    &:hover, &:focus, &:active {
+      background-color: $grayDark;
+    }
+  }
+}
+
+.box__bottomLink--singleLink {
+  padding: 0;
+  overflow: hidden;
+  a {
+    text-decoration: none;
+    color: $white;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    padding: 0.5em;
+    display: block;
+    width: 100%;
+    float: none;
+    background-color: green;
+    @include transition( all );
+    &:hover, &:focus, &:active {
+      background-color: darkgreen;
+    }
+  }
+}
+
+.box__bottomLink--doubleLink {
+  padding: 0;
+  overflow: hidden;
+  a {
+    text-decoration: none;
+    color: $white;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    padding: 0.5em;
+    display: block;
+    width: 50%;
+    float: left;
+    background-color: green;
+    @include transition( all );
+    &:hover, &:focus, &:active {
+      background-color: darkgreen;
+    }
+    + a {
+      float: right;
+      background-color: $grayLight;
+      &:hover, &:focus, &:active {
+        background-color: darken( $grayLight, 20% );
+      }
+      color: $black;
+    }
+  }
+}
+
+.box__connect--page {
+  width: 60%;
+  margin: auto;
+}
+
+.form-group.radio__typeUser {
+
+  p {
+    font-weight: bold;
+    margin-top: 2em;
+    margin-bottom: 1em;
+  }
+
+  .form-group__content {
+    background-color: $grayLight;
+    padding: 0.3em;
+    @include border-radius( 5px );
+  }
+
+  label {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    display: block;
+    float: left;
+    width: 50%;
+    padding: 0.5em 1em;
+    text-align: center;
+    cursor: pointer;
+    @include border-radius( 5px );
+  }
+  
+  input:checked + label {
+    color: $white;
+  }
+
+  input:focus + label, input:hover + label {
+    background-color: $grayMiddleLight;
+  }
+  
+}
+
+.box__profilCourse--title {
+  h3 {
+    color: $white;
+  }
+}
+
+.CenterButtonZone {
+  display: block;
+}
+
+.connextSwitchBtn {
+  display: block;
+  float: left;
+  width: 40%;
+  font-size: 1.2rem;
+  padding: 0.5em;
+  color: $grayMiddleLight;
+  a {
+    color: cornflowerblue;
+    text-decoration: none;
+    &:hover, &:focus, &:active {
+      color: dodgerblue;
+      text-decoration: underline;
+    }
+  }
+}
+
+.box__list__leftContent {
+  float: left;
+  width: 70%;
+}
+
+.box__group--waitCourses--courseTitle {
+  font-size: 1.2em;
+}
+
+.seanceAbsence--title {
+  -webkit-animation: flash 1s;
+  -o-animation: flash 1s;
+  animation: flash 1s;
+  padding: 0.5em;
+  text-align: center;
+  color: red;
+}
+
+.shutters--group--absence, .course__absenceSeance {
+  > * {
+    opacity: 0.3;
+  }
+}
+
+
+.pagination {
+  text-align: center;
+  margin-top: 1em;
+  li {
+    display: inline-block;
+    border-left: 1px solid $black;
+    &:first-child, &:first-child+li, &:last-child {
+      border-left: none;
+    }
+    &.active {
+      color: $white;
+    }
+    &:first-child a, &:first-child span, &:last-child a, &:last-child span {
+      @include border-radius( 1em );
+      background-color: transparent;
+      color: $black;
+      &:before {
+        display: block;
+        font-family: 'Simple-Line-Icons';
+        content: "\e079";
+        text-indent: 0%;
+        overflow: visible;
+        white-space: nowrap;
+        font-size: 1.5em;
+        line-height: 1.2em;
+      }
+      position: relative;
+      top: 0.7em;
+      text-indent: 1001%;
+      overflow: hidden;
+      white-space: nowrap;
+      width: 1.5em;
+      height: 1.5em;
+    }
+    &:first-child a, &:first-child span {
+      &:before {
+        content: "\e07a";
+      }
+    }
+    a, span {
+      background-color: $white;
+      display: block;
+      padding: 0.5em;
+      text-decoration: none;
+      color: $black;
+    }
+  }
+}
+
+.form-group .searchCourse__enter {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  width: 80%;
+  float: left;
+}
+
+.form-group .searchCourse__button {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  width: 20%;
+  float: right;
+  background-color: $grayDark;
+  color: $white;
+  @include transition( all );
+  cursor: pointer;
+}
+
+///////// PW reset success
+.box__passwordResetSuccess {
+  .icon {
+    text-align: center;
+    font-size: 3em;
+    color: $mainColor;
+    margin-bottom: 0.5em;
+  }
+  .box__passwordResetSuccess_message {
+    text-align: center;
+  }
+}
+
+///////// 404 visual
+.blockTitle--404 {
+  position: relative;
+  z-index: 100;
+}
+.visual404 {
+  position: absolute;
+  z-index: 10;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  p {
+    font-size: 8em;
+    position: absolute;
+    top: 45%; left: 0; right: 0;
+    text-align: center;
+    animation: pulse 2s infinite;
+  }
+}

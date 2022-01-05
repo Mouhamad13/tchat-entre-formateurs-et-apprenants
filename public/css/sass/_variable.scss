@@ -1,0 +1,29 @@
+////////////////////////////// COLORS
+
+//// Theme colors
+$color-1 : #FF4732;
+$color-2 : #1D8696;
+$color-3 : #ED0293;
+$color-4 : #2980b9;
+$color-5 : #8e44ad;
+$color-6 : #2c3e50;
+$color-7 : #e4cc00;
+$color-8 : #27ae60;
+
+//$mainColor : #FF4732;
+$mainColor : $color-1;
+$secondColor : darken($mainColor, 20%);
+$grayLight : #EFEFEF;
+$grayMiddleLight : #AAAAAA;
+$grayDark : #3A3A3A;
+$black : #212121;
+$white : #ffffff;
+
+////////////////////////////// NUMBERS
+$headerLeft : 300px;
+$headerTop : 2.5em;
+$transitionTime : 0.2s;
+
+////////////////////////////// FONTS
+$mainFont : "Asap", "lucida Sans", "verdana", "futura", sans-serif;
+$nospace : "nospace";

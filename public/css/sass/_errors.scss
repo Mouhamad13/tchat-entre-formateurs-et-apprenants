@@ -1,0 +1,16 @@
+.errorMessage {
+	border-radius: 10px;
+	font-size: 1.2em;
+	padding: 0.5em;
+	display: block;
+	margin-top: 1em;
+	margin-bottom: 0.5em;
+	position: relative;
+	animation: fadeInUp 1s ease;
+	padding-right: 2em;
+	& a {
+		position: absolute;
+		right: 1em;
+		text-decoration: none;
+	}
+}

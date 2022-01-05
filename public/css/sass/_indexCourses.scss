@@ -1,0 +1,110 @@
+.list__course_box--group {
+	padding-top: 0.8em;
+	padding-left: 10px;
+	padding-right: 10px;
+	overflow: hidden;
+	border-collapse: collapse;
+	display: block;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+	font-family: $nospace;
+	* {
+		font-family: $mainFont;
+	}
+}
+.list__course_box--list {
+	width: 25%;
+	display: inline-block;
+	border-collapse: separate;
+	padding: 6px 10px;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+.list__course_box--list a {
+	width: 100%;
+	margin: auto;
+	display: table;
+	vertical-align: middle;
+	height: 15em;
+	text-align: center; 
+	background-color: #FFF;
+	border-radius: 15px;
+	text-decoration: none;
+	@include transition(all);
+	h3 {
+		table-layout: fixed;
+		display: table-cell;
+		vertical-align: middle;
+	}
+	&:hover, &:focus, &:active {
+		outline: none;
+		color: #fff;
+		span.box_mainTitle {
+			color: $white;
+		}
+	}
+	& span {
+		display: block;
+		@include transition(all);
+		&.box_mainTitle {
+			font-size: 1.5em;
+			font-weight: bold;
+			margin: 0.5em;
+		}
+		&.box_subTitle {
+			font-size: 1em;
+			color: $black;
+		}
+	}
+}
+
+.list__course_box--list--add {
+	a {
+		background-color: transparent;
+		position: relative;
+		span {
+			position: absolute;
+			top: 50%;
+			margin-left: 30%;
+			margin-top: -1.5px;
+			width: 40%;
+			height: 3px;
+			background-color: $grayMiddleLight;
+			+ span {
+				-webkit-transform: rotate(90deg);
+				-moz-transform: rotate(90deg);
+				-ms-transform: rotate(90deg);
+				-o-transform: rotate(90deg);
+				transform: rotate(90deg);
+			}
+		}
+		.list__course_box--list--add--text {
+			opacity: 0;
+			position: absolute;
+			bottom: 2em; left: 0; right: 0;
+			text-align: center;
+			color: $grayMiddleLight;
+			@include transition( all );
+		}
+		&:hover, &:focus, &:active {
+			.list__course_box--list--add--text {
+				opacity: 1;
+				-webkit-animation: slideInDown 0.3s;
+				-o-animation: slideInDown 0.3s;
+				animation: slideInDown 0.3s;
+			}
+		}
+	}
+}
+
+.list__empty {
+	color: $grayLight;
+	font-size: 1.5em;
+	text-align: center;
+	position: absolute;
+	top: 50%;
+	width: 100%;
+}
+

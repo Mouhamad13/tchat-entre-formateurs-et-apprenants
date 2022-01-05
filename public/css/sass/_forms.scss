@@ -1,0 +1,173 @@
+.btn {
+  font-size: 1.2rem;
+  padding: 0.5em;
+  display: inline-block;
+  text-decoration: none;
+  color: #fff;
+  border-radius: 5px;
+  border-style: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+
+.form-group--button {
+  margin-top: 2em;
+}
+
+.btn-send {
+  width: 50%;
+  float: right;
+  cursor: pointer;
+  @include transition( all );
+}
+
+.regirsterForm__group {
+  width: 100%;
+  & input {
+    width: 50%;
+    font-size: 1.2rem;
+  }
+}
+
+.littleSpace {
+  width: 60%;
+  margin: auto;
+}
+
+
+
+.form-group {
+  width: 100%;
+  input {
+    width: 100%;
+    font-size: 1.2rem;
+    padding: 0.5em;
+    outline: none;
+    border: 1px solid $grayLight;
+  }
+  select {
+    width: 100%;
+    font-size: 1.2rem;
+    padding: 0 0.5em;
+    padding-right: 1.5em;
+    outline: none;
+    border: 1px solid $grayLight;
+    height: 2em;
+    background-color: $white;
+    appearance:none;
+    -moz-appearance:none; /* Firefox */
+    -webkit-appearance:none; /* Safari and Chrome */
+    cursor: pointer;
+    background: url('../img/select_arrows.png') no-repeat;  /*Adds background-image*/
+    background-position: 99% center;
+    -webkit-background-size: 20px;
+    background-size: 20px;
+  }
+  textarea {
+    width: 100%;
+    font-size: 1.2rem;
+    padding: 0.5em;
+    outline: none;
+    border: 1px solid $grayLight;
+    resize: vertical;
+    appearance:none;
+    -moz-appearance:none; /* Firefox */
+    -webkit-appearance:none; /* Safari and Chrome */
+  }
+}
+
+
+.home__form .form-group {
+  width: 70%;
+}
+.form-group {
+  &--nospace {
+    margin-bottom: 0;
+  }
+  .color_label {
+    @include transition(all);
+    color: $black;
+    font-size: 1em;
+    color: $white;
+    margin-bottom: -1px;
+    display: inline-block;
+    padding: 0.2em 0.5em;
+    @include border-radius( 5px 5px 0 0 );
+    + input {
+      margin: 0;
+      @include border-radius( 0 5px 5px 5px );
+      &:focus, &:active {
+        @include shadow( 0, 2px, 5px, rgba( $black, 0.3 ) );
+      }
+    }
+    + select {
+      margin: 0;
+      @include border-radius( 0 5px 5px 5px );
+      &:focus, &:active {
+        @include shadow( 0, 2px, 5px, rgba( $black, 0.3 ) );
+      }
+    }
+    + textarea {
+      margin: 0;
+      @include border-radius( 0 5px 5px 5px );
+      &:focus, &:active {
+        @include shadow( 0, 2px, 5px, rgba( $black, 0.3 ) );
+      }
+    }
+  }
+  .form__remember {
+    display: inline-block;
+    width: auto;
+    &:checked + label {
+      background-color: transparent;
+    }
+  }
+  label {
+    display: inline-block;
+  }
+  margin: auto;
+  margin-bottom: 1em;
+}
+
+.file_label {
+  margin-top: 2em;
+  margin-bottom: 1em;
+  position: relative;
+  cursor: pointer;
+}
+
+.file_label .icon {
+  position: absolute;
+  top: -0.4em;
+  font-size: 1.5em;
+  padding: 0.5em;
+  color: $white;
+  @include border-radius( 50% );
+}
+
+.fileRightText {
+  display: block;
+  margin-left: 4rem;
+  position: relative;
+  &--alone {
+    top: 0.3em;
+  }
+}
+
+.form-information {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  position: relative;
+  color: $grayMiddleLight;
+  padding-bottom: 1em;
+  border-bottom: 1px solid $grayLight;
+  &--password {
+    padding-left: 1.5em;
+    .icon {
+      position: absolute;
+      left: 0;
+    }
+  }
+}

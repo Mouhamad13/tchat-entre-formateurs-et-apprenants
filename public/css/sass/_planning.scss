@@ -1,0 +1,128 @@
+.blockTitle {
+	.calendar__controller {
+		display: none;
+	}
+}
+.whiteBanner--calendar {
+	padding-bottom: 1em;
+	overflow: hidden;
+	position: relative;
+}
+.calendar__box {
+	margin: auto;
+	max-width: 100%;
+	a {
+		text-decoration: none;
+		color: $black;
+		display: block;
+		position: relative;
+		&.active_day {
+			color: $white;
+		}
+		&.today {
+			font-weight: bold;
+		}
+		span {
+			position: relative;
+			z-index: 10;
+		}
+		&:hover, &:active, &:focus {
+			.has_a_seance {
+				width: 2em;
+				height: 2em;
+				margin-top: -1em;
+				margin-left: -1em;
+			}
+		}
+		.has_a_seance {
+			position: absolute;
+			z-index: 0;
+			width: 1.5em;
+			height: 1.5em;
+			margin-top: -0.75em;
+			margin-left: -0.75em;
+			top: 50%;
+			left: 50%;
+			background-color: $grayLight;
+			@include border-radius(50%);
+			@include transition( all );
+		}
+	}
+	td a, th {
+		text-align: center;
+		padding: 0.6em 0.8em;
+	}
+	th {
+		padding-bottom: 0.2em;
+	}
+	td {
+		border: 2px solid $grayLight;
+		.otherMonth {
+			background-color: $grayLight;
+			.has_a_seance {
+				background-color: $grayMiddleLight;
+			}
+		}
+	}
+}
+
+.box__content-calendar {
+	margin-top: 2em;
+}
+
+.box--demis--continue {
+	&.odd {
+		float: left;
+	}
+	&.even {
+		float: right;
+	}
+}
+
+.calendar__controller {
+	display: block;
+	position: absolute;
+	top: 50%;
+	margin-top: -3em;
+	.calendar__arrow {
+		display: block;
+		border-top: 1px solid $grayMiddleLight;
+		border-right: 1px solid $grayMiddleLight;
+		width: 2em;
+		height: 2em;
+		@include border-radius(0 5px 0 0);
+		@include transition(all);
+	}
+	&.calendar__controller--before {
+		left: 10%;
+		padding: 2em 1em 2em 2em;
+		.calendar__arrow {
+			-webkit-transform: rotate(-135deg);
+			-moz-transform: rotate(-135deg);
+			-ms-transform: rotate(-135deg);
+			-o-transform: rotate(-135deg);
+			transform: rotate(-135deg);
+		}
+	}
+	&.calendar__controller--after {
+		right: 10%;
+		padding: 2em 2em 2em 1em;
+		.calendar__arrow {
+			-webkit-transform: rotate(45deg);
+			-moz-transform: rotate(45deg);
+			-ms-transform: rotate(45deg);
+			-o-transform: rotate(45deg);
+			transform: rotate(45deg);
+		}
+	}
+}
+
+.calendar__empty {
+	text-align: center;
+	margin-top: 3em;
+	color: $grayMiddleLight
+}
+
+.teacher .box__head--calendar h3 {
+	padding-right: 1.8em;
+}

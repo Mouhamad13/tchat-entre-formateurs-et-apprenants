@@ -1,0 +1,14 @@
+.pageContainer {
+	margin-left: $headerLeft;
+	padding-top: 1px; // little tips to avoid exceeded the parent
+	margin-top: -1px; // little tips to avoid exceeded the parent
+	min-height: 94vh;
+}
+
+.header {
+	width: $headerLeft;
+	top: 0; bottom: 0; left: 0;
+    position: fixed;
+	z-index: 1000;
+    background-color: $mainColor;
+}

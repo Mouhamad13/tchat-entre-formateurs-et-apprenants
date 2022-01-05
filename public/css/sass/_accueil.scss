@@ -1,0 +1,614 @@
+.home__header {
+	width: 100%;
+	position: absolute;
+	z-index: 1000;
+	top: 0;
+	border-top: 3px solid $mainColor;
+}
+
+.simpleHeader {
+	background-color: $mainColor;
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	height: 3em;
+	.simpleHeader__logo {
+		display: block;
+		text-indent: 1111%;
+		overflow: hidden;
+		white-space: nowrap;
+		
+		background-size: 80%;
+		height: 3em;
+		width: 15em;
+		margin: auto;
+	}
+	.backButton--logout {
+		position: absolute;
+		top: 1em;
+		left: 1em;
+		color: white;
+	}
+}
+
+.logOutPages {
+	margin-top: 3em;
+}
+
+.logoutContent {
+	h2 {
+		color: $mainColor;
+		font-size: 2em;
+		text-align: center;
+		margin-bottom: 1em;
+	}
+	h3 {
+		color: $mainColor;
+		font-size: 1.5em;
+		margin-bottom: 0.5em;
+	}
+	margin: auto;
+	padding: 2em 1em;
+	max-width: 1000px;
+	min-height: 63vh;
+	li {
+		margin-bottom: 1em;
+		a {
+			color: $grayDark;
+			font-size: 1.5em;
+			font-weight: light;
+			text-decoration: none;
+			&:hover, &:focus, &:active {
+			text-decoration: underline;
+		}
+		}
+	}
+	p {
+		margin-bottom: 1em;
+		font-size: 1.2em;
+	}
+}
+
+.home__mainLogo--title {
+	text-indent: 1111%;
+	overflow: hidden;
+	white-space: nowrap;
+	background: url("..") no-repeat center center;
+	background-size: 80%;
+	height: 5em;
+	width: 25em;
+	margin: auto;
+	margin-top: 10em;
+}
+.home__imageContainer {
+	position: relative;
+}
+.home__arrowBottom {
+	position: absolute;
+	width: 1em;
+	height: 1em;
+	bottom: 1.5em;
+	left: 50%;
+	margin-left: -0.5em;
+	font-size: 2em;
+	color: $white;
+	cursor: pointer;
+	@include transition(all);
+	&:hover, &:focus, &:active {
+		-webkit-transform: scale(1.2);
+		-moz-transform: scale(1.2);
+		-ms-transform: scale(1.2);
+		-o-transform: scale(1.2);
+		transform: scale(1.2);
+	}
+}
+.home__imageContainer__content {
+	position: relative;
+	overflow: hidden;
+	height: 40em;
+	border-bottom: 3px solid $white;
+}
+.home__imageContainer__title {
+	position: absolute;
+	bottom: 4em;
+	left: 50%;
+	width: 60%;
+	margin-left: -30%;
+	color: $white;
+	font-size: 3em;
+	z-index: 20;
+	font-weight: bold;
+	text-align: center;
+}
+.home__imageColor {
+	background-color: $mainColor;
+	opacity: 0.3;
+	position: absolute;
+	top: 0; right: 0; bottom: 0; left: 0;
+}
+.home__imageContainer__image {
+	width: 1500px;
+}
+.home__presentation {
+	width: 100%;
+	background-color: $white;
+	&--1 {
+		background-color: $mainColor;
+	}
+}
+.home__presentation--connect {
+	height: 25em;
+	overflow: hidden;
+	background-color: $mainColor;
+}
+.home__presentation--connect .home__box--right {
+	h3 {
+		color: $white;
+	}
+}
+.home__box--content {
+	margin-top: 2em;
+	a {
+		display: block;
+		text-decoration: none;
+		color: $white;
+		font-size: 1.5em;
+		text-align: center;
+		width: 8em;
+		border: 1px solid $white;
+		padding: 0.5em;
+		margin: auto;
+		margin-bottom: 1em;
+		@include border-radius(2px);
+		&:hover, &:focus, &:active {
+			background-color: rgba( $white, 0.1 );
+		}
+	}
+	padding: 1em;
+}
+.connectTitle {
+	text-align: center;
+	font-size: 1.5em;
+	font-style: italic;
+	color: $mainColor;
+	margin-top: 1em;
+	margin-bottom: 1em;
+}
+.home__box--left {
+	float: left;
+	width: 50%;
+	h3 {
+		width: 90%;
+		margin: auto;
+		color: $white;
+		font-size: 1.6em;
+		text-align: center;
+		margin-bottom: 1em;
+		margin-top: 2em;
+	}
+	p {
+		color: $white;
+		font-size: 1.1em;
+		line-height: 1.5;
+		width: 90%;
+		margin: auto;
+		margin-bottom: 1em;
+		&.leader {
+			font-style: italic;
+		}
+	}
+}
+.home__box--right {
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+	float: right;
+	width: 50%;
+	vertical-align: middle;
+	img {
+		width: 100%;
+		display: block;
+	}
+}
+
+.home__box--image {
+	overflow: hidden;
+	img {
+		width: auto;
+		height: 100%;
+		display: block;
+	}
+}
+
+.home__btn {
+	@include resetButtun();
+	background-color: $mainColor;
+	color: $white;
+	padding: 1em;
+	width: 100%;
+}
+
+.home__separator {
+	border-bottom: 1px solid $grayDark;
+	width: 70%;
+	height: 1em;
+	margin: auto;
+	margin-top: 1.5em;
+	margin-bottom: 1.5em;
+	text-align: center;
+	span {
+		display: inline-block;
+		position: relative;
+		bottom: -0.2em;
+		padding: 0.3em 0.5em;
+		background-color: $white;
+		color: $grayDark;
+	}
+}
+
+.forgetPassword {
+	display: block;
+	float: right;
+	margin-top: 0.2em;
+	text-decoration: underline;
+	font-size: 0.8em;
+	font-style: italic;
+}
+
+.home__link--register{
+	width: 40%;
+	display: block;
+	background-color: $mainColor;
+	color: $white;
+	padding: 1em;
+	text-align: center;
+	&--student {
+		float: left;
+	}
+	&--teacher{
+		float: right;
+	}
+}
+
+.home__formButton {
+	@include transition(all);
+	&:hover, &:focus, &:active {
+		background-color: darken( $mainColor, 20% );
+	}
+}
+
+.home__connectZone {
+	position: absolute;
+	right: 1em;
+	top: 1.5em;
+	a {
+		border: 1px solid $white;
+		padding: 0.5em;
+		@include border-radius( 1.5em );
+		color: $white;
+		@include transition(all);
+		&:hover, &:focus, &:active {
+			background-color: $white;
+			background-color: rgba( $white, 0.2);
+			color: $white;
+		}
+	}
+}
+
+.form-group.radio__typeUser input:checked+label {
+	background-color: $mainColor;
+}
+
+
+
+////////////
+.home_footer {
+	background-color: $white;
+}
+
+.home_footer--1 img {
+	display: block;
+	margin: auto;
+}
+
+.home_footer--2 {
+	text-align: center;
+	li {
+		-webkit-box-sizing: border-box;
+		-moz-box-sizing: border-box;
+		box-sizing: border-box;
+	}
+	a {
+		-webkit-box-sizing: border-box;
+		-moz-box-sizing: border-box;
+		box-sizing: border-box;
+		display: block;
+		padding: 0.8em;
+		text-decoration: none;
+		color: $black;
+		@include transition( all );
+		&:hover, &:focus, &:active {
+			color: $mainColor;
+			text-decoration: underline;
+		}
+	}
+}
+
+.home_footer--3 {
+	h3 {
+		text-align: center;
+		color: $mainColor;
+		font-size: 1.2em;
+		margin-bottom: 1em;
+	}
+	.followLink {
+		display: block;
+		margin: auto;
+		height: 1em;
+		padding: 0.5em;
+		padding-left: 2em;
+		border: 1px solid;
+		width: 10em;
+		position: relative;
+		margin-bottom: 1em;
+		line-height: 1;
+		text-align: center;
+		.icon {
+			position: absolute;
+			left: 0;
+			top: 0;
+			width: 2em;
+			height: 2em;
+			background-color: green;
+			line-height: 2em;
+			text-align: center;
+			color: $white;
+		}
+	}
+	.followLinkFb {
+		.icon {
+			background-color: #29487d;
+		}
+		color: #29487d;
+	}
+	.followLinkTw {
+		.icon {
+			background-color: #1da1f2;
+		}
+		color: #1da1f2;
+	}
+
+	.logoByLoic {
+		display: block;
+		width: 200px;
+		margin: auto;
+	}
+}
+
+.home_footer--content {
+	padding: 1em 1em 1em 0;
+	&:first-child {
+		padding-left: 1em;
+	}
+	width: 33.333%;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+	float: left;
+	div {
+		background-color: #fff;
+		height: 3em;
+	}
+}
+
+
+
+/////////// HOME PRESENT CONTENT
+.home__presentation--2 {
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+	padding: 2em 0;
+}
+
+.home__presentation--content {
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+	width: 25%;
+	padding: 0.5em;
+	float: left;
+	@include transition(all);
+
+	&:hover .presentation__icon img {
+		@include shadow( 0, 0, 20px, rgba( $grayDark, 0.1 ) );
+	}
+
+	.presentation__icon img {
+		display: block;
+		width: 150px;
+		height: 150px;
+		margin: auto;
+		@include transition( all );
+		@include border-radius( 50% );
+	}
+
+	.presentation__content {
+		h4 {
+			color: $mainColor;
+			font-size: 1.2em;
+			margin-bottom: 0.5em;
+		}
+		padding: 0.5em;
+		margin-top: 1em;
+		text-align: center;
+	}
+
+}
+
+
+
+@media screen and (min-width: 1500px) {
+	.home__imageContainer__image {
+		width: 100%;
+		height: auto;
+	}
+}
+
+@media screen and (min-width: 901px) and (max-width: 1150px) {
+	.home__link--register {
+		width: 30%;
+	}
+}
+
+@media screen and (min-width: 901px) and (max-width: 1450px) {
+	.home__box--image {
+		height: 37em;
+		img {
+			height: 100%;
+			width: auto;
+		}
+	}
+	@media screen and (max-width: 1350px) {
+		.home__box--left img {
+				margin-right: -20%;
+		}
+
+		.home__box--right img {
+			margin-left: -20%;
+		}
+	}
+	@media screen and (max-width: 1150px) {
+		.home__box--left img {
+			margin-right: -35%;
+		}
+
+		.home__box--right img {
+			margin-left: -35%;
+		}
+	}
+	@media screen and (max-width: 1024px) {
+		.home__box--left img {
+			margin-right: -50%;
+		}
+
+		.home__box--right img {
+			margin-left: -50%;
+		}
+	}
+
+}
+
+@media screen and (max-width: 900px) {
+	.home__link--register {
+		width: 30%;
+	}
+	.home__box--left, .home__box--right {
+		display: block;
+		width: 100%;
+	}
+
+	.home__box--image img {
+		height: auto;
+		width: 100%;
+	}
+
+	.home__box--left.home__box--image {
+		display: none;
+	}
+
+	.home__presentation--content {
+		width: 50%;
+		padding-bottom: 3em;
+	}
+
+}
+
+@media screen and (max-width: 790px) {
+	.home__imageContainer__title {
+		font-size: 2em;
+		bottom: 8em;
+	}
+	.home_footer--content {
+		float: none;
+		width: 100%;
+		padding: 1em;
+		border-bottom: 1px solid $grayLight;
+		&:last-child {
+			border-bottom: none;
+		}
+	}
+	.home_footer--2 {
+		a {
+			&:hover, &:focus, &:active {
+				background-color: $grayLight;
+				color: $mainColor;
+				text-decoration: none;
+			}
+		}
+	}
+	.home__presentation--content {
+		width: 100%;
+		float: none;
+	}
+}
+
+@media screen and (max-width: 530px) {
+	.home__mainLogo--title {
+		width: 100%;
+		margin-top: 4em;
+	}
+
+	.home__imageContainer__content {
+		height: 26em;
+	}
+
+	.home__imageContainer__title {
+		font-size: 2em;
+		font-weight: normal;
+		bottom: auto;
+		top: 5em;
+		width: 90%;
+		left: 35%;
+	}
+	.home__box--left h3 {
+		width: 100%;
+	}
+	.home__separator {
+		width: 100%;
+	}
+	.home__form .form-group {
+		width: 100%;
+	}
+
+	.home__connectZone {
+		top: -3px; left: 0; right: 0;
+		background-color: $mainColor;
+		a {
+			-webkit-box-sizing: border-box;
+			-moz-box-sizing: border-box;
+			box-sizing: border-box;
+			display: block;
+			float: left;
+			width: 50%;
+			text-align: center;
+			border: none;
+			@include border-radius(0);
+			+ a {
+				background-color: lighten( $mainColor, 10% );
+			}
+		}
+	}
+
+	.home__arrowBottom {
+		bottom: 0.5em;
+	}
+
+}
+
+@media screen and (max-height: 28em) {
+	.home__arrowBottom {
+		display: none;
+	}
+}

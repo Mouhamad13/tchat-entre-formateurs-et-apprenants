@@ -1,0 +1,46 @@
+.infoBlock {
+	@include noSpaceFont();
+	li {
+		display: inline-block;
+		width: 50%;
+		&:last-child a {
+			border-right: none;
+		}
+		a, div {
+			display: block;
+			color: $white;
+			text-decoration: none;
+			text-align: center;
+			padding-top: 0.5em;
+			padding-bottom: 0.5em;
+			border-right: 1px solid $white;
+			span {
+				display: block;
+				&:first-child {
+					font-size: 0.8em;
+					margin-bottom: 1em;
+				}
+				+ span {
+					font-size: 1.5em;
+				}
+			}
+		}
+	}
+	&--teacher {
+		li {
+			width: 33.333%;
+		}
+	}
+	&--dark {
+		background-color: $grayDark;
+	}
+}
+
+
+
+
+
+/////// OLD
+.indexNotification {
+
+}

@@ -1,0 +1,3 @@
+Sitemap: <lien url="http://www.stucher.be/xml/sitemap.xml.gz.xml">http://www.stucher.be/xml/sitemap.xml.gz.xml</lien>
+User-agent: *
+Disallow:
